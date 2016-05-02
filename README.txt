@@ -31,3 +31,4 @@ ntpdate time.nist.gov
 date
 timedatectl status
 hwclock -w
+timedatectl status
