@@ -3,17 +3,19 @@
 # RTC1307 module on 1-3-5-7-9 pin 
 
 raspi-config
+# 9 Advanced Options -> A7 I2C -> Enabled YES
 # Restart to be able to use the I2Cbus
+
 
 apt-get install i2c-tools
 i2cdetect -y 1
 
 service ntp stop
 insserv -r ntp
-# NTP is in the way the RTC operation
+# NTP does not move at the same time as RTC
 
 vi /etc/rc.local
-# Add from the lower second row
+# To add to the line above the "exit 0"
  echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
  sleep 3
  hwclock -s
