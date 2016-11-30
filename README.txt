@@ -12,7 +12,7 @@ i2cdetect -y 1
 
 service ntp stop
 insserv -r ntp
-# NTP does not move at the same time as RTC
+# NTP does not excute at the same time as RTC
 
 vi /etc/rc.local
 # To add to the line above the "exit 0"
