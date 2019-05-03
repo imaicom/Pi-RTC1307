@@ -34,3 +34,5 @@ date
 timedatectl status
 hwclock -w
 timedatectl status
+
+ntpdate -s -b ntp.jst.mfeed.ad.jp
